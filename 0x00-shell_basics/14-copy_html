@@ -1,5 +1,4 @@
 
 #!/bin/bash
-pwd
-
+cp -u*.htm..
 
