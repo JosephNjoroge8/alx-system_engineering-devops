@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Configures Nginx for redirection
+
+# Install Nginx if not already installed
+apt-get update
+apt-get install -y nginx
+
+# Configure redirection
+sed -i '/server_name _;/a \    rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
+
+# Restart Nginx
+service nginx restart
