@@ -7,7 +7,7 @@ import sys
 if __name__ == "__main__":
     employee_id = sys.argv[1]
     base_url = "https://jsonplaceholder.typicode.com"
-    
+
     user_url = f"{base_url}/users/{employee_id}"
     user_response = requests.get(user_url)
     user_data = user_response.json()
@@ -21,4 +21,5 @@ if __name__ == "__main__":
     with open(csv_filename, mode='w', newline='') as csv_file:
         csv_writer = csv.writer(csv_file, quoting=csv.QUOTE_ALL)
         for todo in todos_data:
-            csv_writer.writerow([employee_id, username, str(todo.get('completed')), todo.get('title')]) 
+            csv_writer.writerow([employee_id, username,
+                str(todo.get('completed')), todo.get('title')])

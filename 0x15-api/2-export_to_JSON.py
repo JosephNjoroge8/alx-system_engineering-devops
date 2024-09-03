@@ -7,7 +7,7 @@ import sys
 if __name__ == "__main__":
     employee_id = sys.argv[1]
     base_url = "https://jsonplaceholder.typicode.com"
-    
+
     user_url = f"{base_url}/users/{employee_id}"
     user_response = requests.get(user_url)
     user_data = user_response.json()
@@ -27,4 +27,4 @@ if __name__ == "__main__":
 
     json_filename = f"{employee_id}.json"
     with open(json_filename, 'w') as json_file:
-        json.dump(json_data, json_file) 
+        json.dump(json_data, json_file)
